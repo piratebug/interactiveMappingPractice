@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fantasy Interactive Map!</title>
+    <!--   import mapbox gl js and css   -->
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+  <!--  map css  -->
+  <style>
+    #map {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+    }
+    #title {
+      color: #d5d5d5;
+      font-family: Georgia;
+      font-size: 35px;
+      position: aboslute;
+    }
+  </style>
+  </head>
+  <body>
+    <!-- map element -->
+    <!-- This is where the map will live -->
+    <div id="map"></div>
+    <div style="position: absolute" id="title">
+      Fantasy Map: The Lost Fjords of Tangeria
+    </div>
+
+    <!-- web map script -->
+    <script>
+      // access token required for loading your custom styles
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoiYWtoY2xhc2VuIiwiYSI6ImNtNnB1NmIzbDFtZWQya290cTRkMjlnOHUifQ.caadyF2_9X4Q5t4eFSiHhA";
+
+      // create a new map using the style from mapbox and passing some parameters for the initial view
+      var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/akhclasen/cm7h2imtx001t01r8gjf5b66e",
+        // longitude, latitude
+        center: [-121.989, 45.260],
+        zoom: 10.04,
+        maxZoom: 18,
+        minZoom: 8,
+      });
+    </script>
+  </body>
+</html>
